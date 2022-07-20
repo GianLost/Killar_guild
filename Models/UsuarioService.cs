@@ -32,22 +32,22 @@ namespace Killar_Guild.Models
             }
         }
 
-        public void EditUser(Usuario userEdit)
+        public void EditUser(Usuario userEditado)
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
-                Usuario u = db.Usuarios.Find(userEdit.Id);
-                u.Nome = userEdit.Nome;
-                u.DataNasc = userEdit.DataNasc;
-                u.WhatsPub = userEdit.WhatsPub;
-                u.EmailPub = userEdit.EmailPub;
-                u.NickWr = userEdit.NickWr;
-                u.LoginNamePub = userEdit.LoginNamePub;
-                u.SenhaPub = Criptografia.TextoCriptografado(userEdit.SenhaPub);
-                u.CheckSenhaPub = userEdit.CheckSenhaPub;
-                u.Lane = userEdit.Lane;
-                u.Elo = userEdit.Elo;
-                u.Tipo = userEdit.Tipo;
+                Usuario u = db.Usuarios.Find(userEditado.Id);
+                u.Nome = userEditado.Nome;
+                u.DataNasc = userEditado.DataNasc;
+                u.WhatsPub = userEditado.WhatsPub;
+                u.EmailPub = userEditado.EmailPub;
+                u.NickWr = userEditado.NickWr;
+                u.LoginNamePub = userEditado.LoginNamePub;
+                u.SenhaPub = Criptografia.TextoCriptografado(userEditado.SenhaPub);
+                u.CheckSenhaPub = userEditado.CheckSenhaPub;
+                u.Lane = userEditado.Lane;
+                u.Elo = userEditado.Elo;
+                u.Tipo = userEditado.Tipo;
 
                 db.SaveChanges();
             }
@@ -58,7 +58,7 @@ namespace Killar_Guild.Models
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
                 Usuario foundUser = db.Usuarios.Find(id);
-                db.Usuarios.Remove (foundUser);
+                db.Usuarios.Remove(foundUser);
                 db.SaveChanges();
             }
         }

@@ -3,46 +3,73 @@
     ViewData["Title"] = "Listagem De Usuarios";
 }
 
-<div class="row mt-5">
-    <div class="col-md-12 col-sm-4">
-        <table class="table table-responsive table-striped table-dark">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Data de Nascimento</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                    <th>Nick WR</th>
-                    <th>Nome de Usuário</th>
-                    <th>Senha</th>
-                    <th>Lane</th>
-                    <th>Elo</th>
-                    <th>Tipo</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Usuario u in Model)
-                {
-                    <tr>
-                        <td>@u.Id</td>
-                        <td>@u.Nome</td>
-                        <td>@u.DataNasc</td>
-                        <td>@u.WhatsPub</td>
-                        <td>@u.EmailPub</td>
-                        <td>@u.NickWr</td>
-                        <td>@u.LoginNamePub</td>
-                        <td>@u.SenhaPub</td>
-                        <td>@u.Lane</td>
-                        <td>@u.Elo</td>
-                        <td>@u.Tipo</td>
+<body class="text-justify">
 
-                        <td><a href="/Usuario/EditarUser?id=@u.Id">Editar</a></td>
-                        <td><a href="/Usuario/Excluir?id=@u.Id">Excluir</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <a href="/Usuario/CadUser">Cadastrar um novo usuario</a>
-    </div>
-</div>
+    <main role="main">
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <div class="col-md-12 col-sm-4">
+
+                    <table class="table table-responsive table-striped table-dark">
+
+                        <thead>
+
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Data de Nascimento</th>
+                                <th>Telefone</th>
+                                <th>Email</th>
+                                <th>Nick WR</th>
+                                <th>Nome de Usuário</th>
+                                <th>Senha</th>
+                                <th>Lane</th>
+                                <th>Elo</th>
+                                <th>Tipo</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (Usuario u in Model)
+                            {
+                                <tr>
+                                    <td>@u.Id</td>
+                                    <td>@u.Nome</td>
+                                    <td>@u.DataNasc</td>
+                                    <td>@u.WhatsPub</td>
+                                    <td>@u.EmailPub</td>
+                                    <td>@u.NickWr</td>
+                                    <td>@u.LoginNamePub</td>
+                                    <td>@u.SenhaPub</td>
+                                    <td>@u.Lane</td>
+                                    <td>@u.Elo</td>
+                                    <td>@u.Tipo</td>
+
+                                    <td><a href="/Usuario/EditarUser?id=@u.Id">Editar</a></td>
+                                    <td><a href="/Usuario/ExcluirUser?id=@u.Id">Excluir</a></td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+
+                    <a href="/Usuario/CadUser">Cadastrar um novo usuario</a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+</body>

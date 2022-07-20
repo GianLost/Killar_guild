@@ -41,7 +41,31 @@ namespace Killar_Guild.Controllers
         {
             //Autenticacao.CheckLogin(this);
             new UsuarioService().EditUser(userEdit);
-            return RedirectToAction("LitstarUser");
+            return RedirectToAction("ListarUser");
+        }
+
+        public IActionResult ExcluirUser(int id)
+        {
+            using (Killar_GuildContext db = new Killar_GuildContext())
+            {
+                UsuarioService us = new UsuarioService();
+                Usuario userEncontrado = us.SearchForId(id);
+                return View(userEncontrado);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirUser(string decisao, Usuario u)
+        {
+            UsuarioService us = new UsuarioService();
+            
+            if(decisao == "Excluir")
+            {
+                us.DelUser(u.Id);
+                return RedirectToAction("ListarUser");
+            }else{
+                return RedirectToAction("ListarUser");
+            }
         }
 
     }
