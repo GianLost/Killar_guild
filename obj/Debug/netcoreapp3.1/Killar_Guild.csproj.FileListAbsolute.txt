@@ -42,3 +42,7 @@ C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\K
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Killar_Guild.dll
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Killar_Guild.pdb
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Killar_Guild.genruntimeconfig.cache
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\CadUser.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\ListarUser.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\EditarUser.cshtml.g.cs

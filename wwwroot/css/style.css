@@ -1,0 +1,263 @@
+.custom-carosel {
+    text-align: justify;
+    font-family: 'fantasy';
+}
+
+.custom-carosel h1 {
+    text-align: center;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.custom-carosel p {
+    font-size: 20px;
+    color: rgb(130, 129, 129);
+}
+
+.form-cad {
+    border-radius: 20px;
+    border: 5px solid rgb(142, 59, 180);
+    padding: 15px;
+    background: #002349e1;
+    box-shadow: rgba(0, 0, 0, 0.712) -30px 10px 50px;
+}
+
+.form-cad h1 {
+    color: #fff;
+    font-size: 60px;
+}
+
+.form-cad p {
+    color: #fff;
+}
+
+.form-cad hr {
+    background-color: rgba(94, 97, 103, 0.865);
+    height: 0.2px;
+}
+
+.form-cad label {
+    color: #fff;
+    font-size: 18px;
+}
+
+.form-cad input {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid rgb(142, 59, 180);
+    background: none;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.form-cad input::placeholder {
+    color: #fff;
+}
+
+.div-cad {
+    margin-top: 50px;
+}
+
+.form-cad img {
+    width: 800px;
+    height: 320px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.943) -10px 10px 70px;
+    border: 2px solid rgb(142, 59, 180);
+}
+
+.row {
+    margin: 0;
+}
+
+.carossel-fundo {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 10px 50px;
+}
+
+.carossel-fundo img {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
+}
+
+.indicador li {
+    background-color: black;
+}
+
+.goback span:hover {
+    text-shadow: rgba(0, 0, 0, 0.712) -10px 10px 50px;
+}
+
+.bord-cad {
+    border-radius: 8px;
+    border: 2px solid #fff;
+    background-color: #007bff;
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
+    margin-left: 50px;
+}
+
+.bord-cad h2 {
+    font-family: 'fantasy';
+    color: #fff;
+    font-size: 40px;
+    text-decoration: 2px underline #fff;
+}
+
+.bord-cad p {
+    color: white;
+    text-align: justify;
+}
+
+.bord-cad:hover {
+    background-color: #3590f1;
+    cursor: pointer;
+}
+
+.logform {
+    margin-left: -40px;
+}
+
+.form-signin h1 {
+    color: #007bff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.frase a {
+    color: white;
+}
+
+.mod-img {
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
+    border-radius: 20px;
+}
+
+.mod-title {
+    font-family: 'fantasy';
+    text-align: left;
+    font-size: 30px;
+    color: rgb(227, 191, 49);
+}
+
+.mod-body {
+    text-align: justify;
+    padding: 25px;
+}
+
+.but-index {
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.but-index:hover {
+    border-radius: 20px;
+    transition: ease-in-out 0.6s;
+    transform: translateY(-8px);
+    text-decoration: 2px underline #fff;
+    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 8px;
+}
+
+.frame {
+    margin-top: 10px;
+}
+
+
+/*css do carrossel*/
+
+.myslides {
+    display: none;
+}
+
+.slideshow-container {
+    position: relative;
+    top: 20px;
+    box-shadow: #292727 5px 5px 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.slideshow-container img {
+    border-radius: 20px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    margin-top: -80px;
+    width: auto;
+    height: auto;
+    padding: 16px;
+    background-color: rgba(29, 102, 204, 0.963);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(184, 23, 23, 0.8);
+}
+
+.dot-container {
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    display: inline-block;
+    background-color: #007bff5b;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-cad img {}
+}

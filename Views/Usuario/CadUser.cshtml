@@ -1,0 +1,160 @@
+@using Microsoft.AspNetCore.Http;
+
+@model Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gianluca Vialli">
+    <title>Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <title>WR Killar - Brotherhood</title>
+
+</head>
+
+<body class="text-center bckdg-cad">
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xl-10 col-md-10 col-sm-10 offset-md-1 div-cad">
+
+                <form name="formuser" method="post" asp-controller="Usuario" asp-action="CadUser"
+                    class="needs-validation mt-5 form-cad">
+                    <h1 class="mt-3 mb-3">Cadastre-se</h1>
+
+                    <img class="mb-4 mt-5 img-fluid max-width: 100%; height: auto;" src="../Imagens/friend-cadastro.png" alt="" >
+                    <hr class="mb-4">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Seu Nome" asp-for="Nome" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Data de Nascimento" asp-for="DataNasc" type="date" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Whatsapp" asp-for="WhatsPub" type="tel" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="E-mail" asp-for="EmailPub" type="email" class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Nick Wr(aaaa#0000)" asp-for="NickWr" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Nick Name" asp-for="LoginNamePub" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Crie sua senha" asp-for="SenhaPub" type="password" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input placeholder="Repita a senha" asp-for="CheckSenhaPub" type="password" class="form-control" required>
+                        </div>
+
+                    </div>
+                    <hr class="mb-4">
+                    <div class="d-block my-3">
+                       
+                        <div class="col-md-12 mb-3">
+                            <label asp-for="Elo" for="Elo">Elo Atual</label>
+                            <select class="custom-select d-block w-100" asp-for="Elo" for="Elo" id="Elo" required>
+
+                                <option value="">Choose...</option>
+                                <option asp-for="Elo" for="Elo" value="Ferro">Ferro</option>
+                                <option asp-for="Elo" for="Elo" value="Bronze">Bronze</option>
+                                <option asp-for="Elo" for="Elo" value="Ouro">Ouro</option>
+                                <option asp-for="Elo" for="Elo" value="Platina">Platina</option>
+                                <option asp-for="Elo" for="Elo" value="Esmeralda">Esmeralda</option>
+                                <option asp-for="Elo" for="Elo" value="Diamante">Diamante</option>
+                                <option asp-for="Elo" for="Elo" value="Mestre">Mestre</option>
+                                <option asp-for="Elo" for="Elo" value="Grão-Mestre">Grão-Mestre</option>
+                                <option asp-for="Elo" for="Elo" value="Desafiante">Desafiante</option>
+                            
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-block my-3">
+                       
+                        <div class="col-md-12 mb-3">
+                            <label asp-for="Lane" for="Lane">Lane Principal</label>
+                            <select class="custom-select d-block w-100" asp-for="Lane" for="Lane" id="Lane" required>
+
+                                <option value="">Choose...</option>
+                                <option asp-for="Lane" for="Lane" value="Suporte">Suporte</option>
+                                <option asp-for="Lane" for="Lane" value="AD Carry">AD Carry</option>
+                                <option asp-for="Lane" for="Lane" value="Mid Lane">Mid Lane</option>
+                                <option asp-for="Lane" for="Lane" value="Jungle">Jungle</option>
+                                <option asp-for="Lane" for="Lane" value="Top Lane">Top Lane</option>
+                            
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
+                            <select class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" required>
+
+                                <option value="">Choose...</option>
+                                <option asp-for="@Usuario.ADMIN" for="ADMIN" value="@Usuario.ADMIN">Administrador</option>
+                                <option asp-for="@Usuario.PADRAO" for="PADRAO" value="@Usuario.PADRAO">Padrão</option>
+                            
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="Id">
+
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="return ValidarForm()">Cadastre-se</button>
+                        
+                    <div class="mt-5 frase">
+                    <p>Já se cadastrou? <a asp-controller="Home" asp-action="Login" style="color: #007bff;">Entrar</a></p>
+                </div>
+                </form>
+
+                <p class="text-danger">@ViewData["mensagem"]</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -16,8 +16,7 @@ namespace Killar_Guild.Controllers
             }
         }
 
-        public static bool
-        VerificaLoginSenha(string login, string senha, Controller controller)
+        public static bool VerificaLoginSenha(string login, string senha, Controller controller)
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
@@ -34,9 +33,11 @@ namespace Killar_Guild.Controllers
                 }
                 else
                 {
-                    controller.HttpContext.Session.SetInt32("IdUsuario",ListaUsuarioEncontrado[0].Id);
+                    
                     controller.HttpContext.Session.SetString("login",ListaUsuarioEncontrado[0].LoginNamePub);
+                    controller.HttpContext.Session.SetString("senha",ListaUsuarioEncontrado[0].CheckSenhaPub);
                     controller.HttpContext.Session.SetString("nome", ListaUsuarioEncontrado[0].Nome);
+                    controller.HttpContext.Session.SetInt32("IdUsuario",ListaUsuarioEncontrado[0].Id);
                     controller.HttpContext.Session.SetInt32("tipo", ListaUsuarioEncontrado[0].Tipo);
 
                     return true;
@@ -46,8 +47,7 @@ namespace Killar_Guild.Controllers
 
         public static void VerificaSeUsuarioAdminExiste(Killar_GuildContext db)
         {
-            IQueryable<Usuario> UsuarioEncontrado =
-                db.Usuarios.Where(u => u.LoginNamePub == "admin");
+            IQueryable<Usuario> UsuarioEncontrado = db.Usuarios.Where(u => u.LoginNamePub == "admin");
 
             if (UsuarioEncontrado.ToList().Count == 0)
             {
