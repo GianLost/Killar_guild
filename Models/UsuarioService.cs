@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using MySql.Data.MySqlClient;
 
 namespace Killar_Guild.Models
 {
     public class UsuarioService
     {
+        private const string DadosConexao = "Server=localhost;DataBase=DbKillarGuild;Uid=root;";
         public void AddUser(Usuario newUser)
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
@@ -30,6 +33,95 @@ namespace Killar_Guild.Models
             {
                 return db.Usuarios.Find(id);
             }
+        }
+
+        public List<Usuario> Profile(int Id)
+        {
+
+            MySqlConnection Conexao = new MySqlConnection(DadosConexao);
+            Conexao.Open();
+
+            List<Usuario> ListaDeUsuarios = new List<Usuario>();
+
+            String Query = "";
+            if (Id > 0)
+            {
+                Query = "SELECT * FROM Usuarios WHERE Id=" + Id;
+            }
+            else
+            {
+                Query = "SELECT * FROM Usuarios";
+            }
+
+
+            MySqlCommand Comando = new MySqlCommand(Query, Conexao);
+
+            MySqlDataReader Reader = Comando.ExecuteReader();
+
+
+            while (Reader.Read())
+            {
+
+                Usuario UsuarioEncontrado = new Usuario();
+
+                UsuarioEncontrado.Id = Reader.GetInt32("Id");
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("Nome")))
+                {
+                    UsuarioEncontrado.Nome = Reader.GetString("Nome");
+                }
+
+                UsuarioEncontrado.DataNasc = Reader.GetDateTime("DataNasc");
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("WhatsPub")))
+                {
+                    UsuarioEncontrado.WhatsPub = Reader.GetString("WhatsPub");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("EmailPub")))
+                {
+                    UsuarioEncontrado.EmailPub = Reader.GetString("EmailPub");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("NickWr")))
+                {
+                    UsuarioEncontrado.NickWr = Reader.GetString("NickWr");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("LoginNamePub")))
+                {
+                    UsuarioEncontrado.LoginNamePub = Reader.GetString("LoginNamePub");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("SenhaPub")))
+                {
+                    UsuarioEncontrado.SenhaPub = Reader.GetString("SenhaPub");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("CheckSenhaPub")))
+                {
+                    UsuarioEncontrado.CheckSenhaPub = Reader.GetString("CheckSenhaPub");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("Lane")))
+                {
+                    UsuarioEncontrado.Lane = Reader.GetString("Lane");
+                }
+
+                if (!Reader.IsDBNull(Reader.GetOrdinal("Elo")))
+                {
+                    UsuarioEncontrado.Elo = Reader.GetString("Elo");
+                }
+
+                UsuarioEncontrado.Tipo = Reader.GetInt32("Tipo");
+
+                ListaDeUsuarios.Add(UsuarioEncontrado);
+
+            }
+
+            Conexao.Close();
+
+            return ListaDeUsuarios;
         }
 
         public void EditUser(Usuario userEditado)

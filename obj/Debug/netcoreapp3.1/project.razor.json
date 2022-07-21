@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Usuario\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuario\\NeedAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14424,6 +14429,11 @@
     {
       "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Usuario\\ExcluirUser.cshtml",
       "TargetPath": "Views\\Usuario\\ExcluirUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Usuario\\Perfil.cshtml",
+      "TargetPath": "Views\\Usuario\\Perfil.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14444,6 +14454,11 @@
     {
       "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Post\\CadPosts.cshtml",
+      "TargetPath": "Views\\Post\\CadPosts.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -41,34 +41,70 @@
                                     <span class="sr-only">(current)</span></a>
                             </li>
 
-                            <!--<li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Login">Login</a>
-                            </li>-->
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Usuario" asp-action="CadUser">Cadastre-se</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Usuario" asp-action="ListarUser">Usuários cadstrados</a>
-                            </li>
                         }
-                        else
+                        @if (Context.Session.GetInt32("tipo") == 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Usuario" asp-action="News">Notícias</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home
+                                    <span class="sr-only">(current)</span></a>
                             </li>
+
                             <li class="nav-item dropdown">
+
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Área player
+                                Área player
                                 </a>
+
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="CadUser">Cadastrar Usuários</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="ListarUser">Usuários Cadastrados</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="QuemSomos">Sobre a
                                         Killar</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="Comunidade">Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil"> Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="News">Notícias</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a>
                                 </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Usuario" asp-action="Logout">Sair</a>
+                            </li>
+
+                        }
+                        @if (Context.Session.GetInt32("tipo") == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Área player
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="QuemSomos">Sobre a
+                                    Killar</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="Comunidade">Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="News">Notícias</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a>
+                                </div>
+
                             </li>
 
                             <li class="nav-item">

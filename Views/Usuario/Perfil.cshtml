@@ -1,0 +1,56 @@
+
+@model List<Usuario>
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+@foreach (Usuario u in Model)
+{
+    <h1>Olá @u.Nome, Esses são seus dados!</h1>
+
+    <div class="dados-pessoais">
+
+        <span><b>Nome:</b></span>
+        <p>@u.Nome</p>
+
+        <span><b>Data de Nascimento</b></span>
+        <p>@u.DataNasc.ToString("dd/MM/yyyy")</p>
+
+        <span><b>Whatsapp</b></span>
+        <p>@u.WhatsPub</p>
+
+        <span><b>E-mail</b></span>
+        <p>@u.EmailPub</p>
+
+        <span><b>Tipo</b></span>
+        <p>@u.Tipo</p>
+
+    </div>
+
+    <div class="dados-player">
+
+        <span><b>Nick Wr(aaaa#0000):</b></span>
+        <p>@u.NickWr</p>
+
+        <span><b>Nick Name:</b></span>
+        <p>@u.LoginNamePub</p>
+
+        <span><b>Sua senha:</b></span>
+        <p>@u.CheckSenhaPub</p>
+
+        <span><b>Elo Atual:</b></span>
+        <p>@u.Elo</p>
+
+        <span><b>Lane Principal:</b></span>
+        <p>@u.Lane</p>
+
+    </div>
+
+    <div class="operacoes">
+
+        <a href="/Usuario/EditarUser?Id=@u.Id">Alterar dados | </a>
+        <a href="/Usuario/ExcluirUser?Id=@u.Id"> Exluir Usuário</a>
+
+    </div>
+}

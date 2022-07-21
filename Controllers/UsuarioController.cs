@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Killar_Guild.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Killar_Guild.Controllers
@@ -29,6 +31,20 @@ namespace Killar_Guild.Controllers
             return View(new UsuarioService().ListUser());
         }
 
+        public IActionResult Perfil()
+        {
+
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
+            UsuarioService ur = new UsuarioService();
+            int IdUserSession = (int)HttpContext.Session.GetInt32("IdUsuario");
+            List<Usuario> ListaUsers = ur.Profile(IdUserSession);
+            return View(ListaUsers);
+        }
+
         public IActionResult EditarUser(int id)
         {
             //Autenticacao.CheckLogin(this);
@@ -41,7 +57,7 @@ namespace Killar_Guild.Controllers
         {
             //Autenticacao.CheckLogin(this);
             new UsuarioService().EditUser(userEdit);
-            return RedirectToAction("ListarUser");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult ExcluirUser(int id)
@@ -62,10 +78,17 @@ namespace Killar_Guild.Controllers
             if(decisao == "Excluir")
             {
                 us.DelUser(u.Id);
-                return RedirectToAction("ListarUser");
+                return RedirectToAction("Index","Home");
             }else{
-                return RedirectToAction("ListarUser");
+                return RedirectToAction("Index","Home");
             }
+        }
+
+
+        public IActionResult Logout(){
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
+                 
         }
 
     }

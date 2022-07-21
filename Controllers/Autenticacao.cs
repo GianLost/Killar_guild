@@ -21,9 +21,10 @@ namespace Killar_Guild.Controllers
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
                 VerificaSeUsuarioAdminExiste (db);
-                senha = Criptografia.TextoCriptografado(senha);
 
-                IQueryable<Usuario> UsuarioEncontrado = db.Usuarios.Where(u =>u.LoginNamePub == login && u.SenhaPub == senha);
+                string s = Criptografia.TextoCriptografado(senha);
+
+                IQueryable<Usuario> UsuarioEncontrado = db.Usuarios.Where(u =>u.LoginNamePub == login && u.SenhaPub == s);
 
                 List<Usuario> ListaUsuarioEncontrado = UsuarioEncontrado.ToList();
 
@@ -35,10 +36,9 @@ namespace Killar_Guild.Controllers
                 {
                     
                     controller.HttpContext.Session.SetString("login",ListaUsuarioEncontrado[0].LoginNamePub);
-                    controller.HttpContext.Session.SetString("senha",ListaUsuarioEncontrado[0].CheckSenhaPub);
-                    controller.HttpContext.Session.SetString("nome", ListaUsuarioEncontrado[0].Nome);
-                    controller.HttpContext.Session.SetInt32("IdUsuario",ListaUsuarioEncontrado[0].Id);
+                    controller.HttpContext.Session.SetString("nome", ListaUsuarioEncontrado[0].Nome);;
                     controller.HttpContext.Session.SetInt32("tipo", ListaUsuarioEncontrado[0].Tipo);
+                    controller.HttpContext.Session.SetInt32("IdUsuario",ListaUsuarioEncontrado[0].Id);
 
                     return true;
                 }

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
+using Killar_Guild.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Killar_Guild.Models;
 
 namespace Killar_Guild.Controllers
 {
@@ -19,10 +19,30 @@ namespace Killar_Guild.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string login, string senha)
+        {
+            if (Autenticacao.VerificaLoginSenha(login, senha, this))
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+            ViewData["Erro"] = "Usuário inválido";
+            return View();
+            }
+        }
+
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            });
         }
     }
 }
