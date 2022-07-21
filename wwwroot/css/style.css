@@ -68,6 +68,10 @@
     border: 2px solid rgb(142, 59, 180);
 }
 
+.lista-user {
+    margin-top: 120px;
+}
+
 .row {
     margin: 0;
 }

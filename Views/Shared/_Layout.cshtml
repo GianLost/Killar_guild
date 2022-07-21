@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto mr-5">
 
-                        @if (Context.Session.GetInt32("login") == null)
+                        @if (Context.Session.GetString("login") == null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Index">Home

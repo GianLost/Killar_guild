@@ -128,29 +128,45 @@
                                 Please provide a valid state.
                             </div>
                         </div>
+                        @if (Context.Session.GetInt32("tipo") == 0)
+                        {
+                            <div class="col-md-12 mb-3">
+                                <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
+                                <select class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" required>
 
-                        <div class="col-md-12 mb-3">
-                            <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
-                            <select class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" required>
+                                    <option value="">Choose...</option>
+                                    <option asp-for="@Usuario.ADMIN" for="ADMIN" value="@Usuario.ADMIN">Administrador
+                                    </option>
+                                    <option asp-for="@Usuario.PADRAO" for="PADRAO" value="@Usuario.PADRAO">Padrão</option>
 
-                                <option value="">Choose...</option>
-                                <option asp-for="@Usuario.ADMIN" for="ADMIN" value="@Usuario.ADMIN">Administrador
-                                </option>
-                                <option asp-for="@Usuario.PADRAO" for="PADRAO" value="@Usuario.PADRAO">Padrão</option>
-
-                            </select>
-                            <div class="invalid-feedback">
-                                Please provide a valid state.
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
                             </div>
-                        </div>
+                        }
+                        @if (Context.Session.GetInt32("tipo") == 1 || Context.Session.GetString("IdUsuario") == null)
+                        {
+                            <div class="col-md-12 mb-3">
+                                <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
+                                <select red class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" readonly required>
 
+                                    <option asp-for="@Usuario.PADRAO" for="PADRAO" value="@Usuario.PADRAO">Padrão</option>
+
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+                        }
                     </div>
 
                     <hr class="mb-4">
 
                     <input type="hidden" asp-for="Id">
 
-                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="return ValidarFormEdit()">Salvar
+                    <button class="btn btn-primary btn-lg btn-block" type="submit"
+                        onclick="return ValidarFormEdit()">Salvar
                         alterações</button>
                 </form>
 

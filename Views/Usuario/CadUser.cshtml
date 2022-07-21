@@ -113,6 +113,7 @@
                     <div class="d-block my-3">
 
                         <div class="col-md-12 mb-3">
+                            <input name="Id" type="hidden" asp-for="Id">
                             <label asp-for="Lane" for="Lane">Lane Principal</label>
                             <select class="custom-select d-block w-100" asp-for="Lane" for="Lane" id="Lane" required>
 
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                         }
-                        @if (Context.Session.GetInt32("login") == null || Context.Session.GetInt32("tipo") == 1)
+                        @if (Context.Session.GetString("login") == null || Context.Session.GetInt32("tipo") == 1)
                         {
                             <div class="col-md-12 mb-3">
                                 <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
@@ -164,7 +165,7 @@
 
                     <hr class="mb-4">
 
-                    <input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="Id">
+                    <!--<input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="Id">-->
 
                     <button class="btn btn-primary btn-lg btn-block" type="submit"
                         onclick="return ValidarForm()">Cadastre-se</button>
