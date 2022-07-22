@@ -1,0 +1,29 @@
+@model List<Post>
+@{
+    Layout = "_LayoutBlog";
+    ViewData["Title"] = "Comunidade";
+}
+<html>
+
+<body class="text-Justify col-xl-6 col-md-6 col-lg-6 col-sm-12 offset-md-3">
+    <div class="container mt-5">
+        @foreach (Post item in Model)
+        {
+            <article id="post-@item.Id" class="post artigo text-justify">
+                <h2 class="post-title">@item.Titulo</h2>
+                <span class="post-date">@item.DataPost</span>
+                <div class="post-content mb-3">
+                    <p>@item.Texto</p>
+                </div>
+                <section id="comments-@item.Id" class="comments">
+                    <h4 class="ml-3 comente">Comente nesta publicação:</h4>
+                    <partial name="_FormComentarios" model="@item.Id" />
+                </section>
+            </article>
+            <hr class="mt-5 mb-5">
+        }
+
+    </div>
+</body>
+
+</html>

@@ -53,3 +53,6 @@ C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\R
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Post\ListarPosts.cshtml.g.cs
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Post\UpdatePost.cshtml.g.cs
 C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Post\DelPost.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutBlog.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Comunidade.cshtml.g.cs
+C:\Users\gianL\OneDrive\Área de Trabalho\Killar_Guild\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\_FormComentarios.cshtml.g.cs

@@ -84,6 +84,11 @@ namespace Killar_Guild.Controllers
             }
         }
 
+        public IActionResult Comunidade()
+        {
+            PostService ps = new PostService();
+            return View(ps.GetPosts());
+        }
 
         public IActionResult Logout(){
             HttpContext.Session.Clear();
