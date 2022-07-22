@@ -2,12 +2,14 @@
 @model Post
 
 @{
-    ViewData["Title"] = "Cadastro";
+    ViewData["Title"] = "Edição de Post";
 }
 
 <h2>Cadastro de Post do Blog</h2>
 
-<form id="frmCadastro" asp-controller="Post" asp-action="CadPosts" method="post">
+<p>@ViewData["Mensagem"]</p>
+
+<form id="frmCadastro" asp-controller="Post" asp-action="UpdatePost" method="post">
 
     <p>
         <label asp-for="Titulo">Título</label><br />

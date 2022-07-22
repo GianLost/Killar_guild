@@ -14447,6 +14447,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Post\\UpdatePost.cshtml",
+      "TargetPath": "Views\\Post\\UpdatePost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Usuario\\ExcluirUser.cshtml",
       "TargetPath": "Views\\Usuario\\ExcluirUser.cshtml",
       "FileKind": "mvc"
@@ -14472,8 +14477,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Post\\DelPost.cshtml",
+      "TargetPath": "Views\\Post\\DelPost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\gianL\\OneDrive\\Área de Trabalho\\Killar_Guild\\Views\\Post\\ListarPosts.cshtml",
+      "TargetPath": "Views\\Post\\ListarPosts.cshtml",
       "FileKind": "mvc"
     }
   ],
