@@ -138,6 +138,7 @@
 .mod-img {
     box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
     border-radius: 20px;
+    margin: auto;
 }
 
 .mod-title {
@@ -149,6 +150,7 @@
 
 .mod-body {
     text-align: justify;
+    line-height: 25px;
     padding: 25px;
 }
 
@@ -160,11 +162,15 @@
 }
 
 .but-index:hover {
-    border-radius: 20px;
+    border-radius: 18px;
     transition: ease-in-out 0.6s;
     transform: translateY(-8px);
     text-decoration: 2px underline #fff;
     box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 8px;
+}
+
+.last {
+    background-color: rgba(37, 84, 211, 0.833);
 }
 
 .frame {
@@ -195,10 +201,8 @@
 }
 
 .slideshow-container {
-    position: relative;
     top: 20px;
     box-shadow: #292727 5px 5px 30px;
-    margin-bottom: 20px;
     border-radius: 20px;
 }
 
