@@ -20,7 +20,7 @@ namespace Killar_Guild.Controllers
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
-                //VerificaSeUsuarioAdminExiste (db);
+                VerificaSeUsuarioAdminExiste (db);
 
                 string s = Criptografia.TextoCriptografado(senha);
 

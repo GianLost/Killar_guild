@@ -33,7 +33,7 @@
                                     <tr>
                                         <td>@item.Titulo</td>
                                         <td>@item.DataPost</td>
-                                        <td>@(item.Comentarios == null ? 0 : item.Comentarios.Count)</td>
+                                        <td>@(item.Comentarios == null ? 0 : item.Comentarios.Count())</td>
                                         <td><a href="UpdatePost?id=@item.Id">Editar</a> | <a href="DelPost?id=@item.Id">Excluir</a></td>
                                     </tr>
                                 }

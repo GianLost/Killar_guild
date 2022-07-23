@@ -7,12 +7,14 @@ namespace Killar_Guild.Controllers
     {
         public IActionResult CadPosts()
         {
+            Autenticacao.CheckLogin(this);
             return View();
         }
 
         [HttpPost]
         public IActionResult CadPosts(Post novoPost)
         {
+            Autenticacao.CheckLogin(this);
             PostService ps = new PostService();
             int novoId = ps.CreatePost(novoPost);
             if (novoId != 0)
@@ -24,17 +26,21 @@ namespace Killar_Guild.Controllers
                 ViewData["Mensagem"] = "Falha na Postagem";
             }
 
-            return View();
+            return RedirectToAction("Comunidade", "Usuario");
         }
 
         public IActionResult ListarPosts()
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaSeUsuarioEAdmin(this);
             PostService ps = new PostService();
             return View(ps.GetPosts());
         }
 
         public IActionResult UpdatePost(int id)
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaSeUsuarioEAdmin(this);
             Post postEncontrado = new PostService().GetPostDetail(id);
             return View(postEncontrado);
         }
@@ -42,12 +48,15 @@ namespace Killar_Guild.Controllers
         [HttpPost]
         public IActionResult UpdatePost(Post postEdit)
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaSeUsuarioEAdmin(this);
             new PostService().UpdPost(postEdit);
             return RedirectToAction("ListarPosts");
         }
 
         public IActionResult DelPost(int id)
         {
+            Autenticacao.CheckLogin(this);
             PostService ps = new PostService();
             Post post = ps.GetPostDetail(id);
 
@@ -59,6 +68,7 @@ namespace Killar_Guild.Controllers
         {
             if (decisao == "s")
             {
+                Autenticacao.CheckLogin(this);
                 PostService service = new PostService();
                 service.DeletePost (id);
             }

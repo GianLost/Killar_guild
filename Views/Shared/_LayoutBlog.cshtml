@@ -61,20 +61,34 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Área player
+                                Área Restrita
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="CadUser">Cadastrar Usuários</a>
-                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="ListarUser">Usuários Cadastrados</a>
-                                    <a class="dropdown-item" asp-controller="Post" asp-action="CadPosts">Crie um Post</a>
                                     <a class="dropdown-item" asp-controller="Post" asp-action="ListarPosts">Posts Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="ListarUser">Usuários Cadastrados</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Blog Killar
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="Post" asp-action="CadPosts">Crie um Post</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="QuemSomos">Sobre a
-                                        Killar</a>
+                                    Killar</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="Comunidade">Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="News">Notícias</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a>
+
                                 </div>
 
                             </li>
@@ -102,9 +116,10 @@
 
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="QuemSomos">Sobre a
                                     Killar</a>
+                                    <a class="dropdown-item" asp-controller="Post" asp-action="CadPosts">Crie um Post</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="Comunidade">Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="Usuario" asp-action="News">Notícias</a>
                                     <a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a>
+                                    
                                 </div>
 
                             </li>

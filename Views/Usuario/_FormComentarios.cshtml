@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Http;
 @model int
 
-<form asp-action="Cadastrar" asp-controller="Comentario" method="POST" class="form-comment">
+<form asp-action="CadComent" asp-controller="Comentario" method="POST" class="form-comment">
     <input name="PostId" value="@Model" type="hidden" />
     <input type="hidden" name="UsuarioId" value=@Context.Session.GetInt32("IdUsuario") asp-for="@Model"/>
     <input type="text" name="Autor" placeholder="Nome" class="comment-name mb-3 ml-3" />

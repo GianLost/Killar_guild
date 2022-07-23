@@ -17,7 +17,9 @@
                 </div>
                 <section id="comments-@item.Id" class="comments">
                     <h4 class="ml-3 comente">Comente nesta publicação:</h4>
+                    <partial name="_ListaComentarios" model="@item.Comentarios" />
                     <partial name="_FormComentarios" model="@item.Id" />
+                    
                 </section>
             </article>
             <hr class="mt-5 mb-5">

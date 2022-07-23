@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Killar_Guild.Models
 {
@@ -49,12 +50,21 @@ namespace Killar_Guild.Models
             }
         }
 
+        public ICollection<Post> GetPostsFull()
+        {
+            using (var context = new Killar_GuildContext())
+            {
+                IQueryable<Post> consulta = context.Posts.Include(p => p.Comentarios).OrderByDescending(p => p.DataPost);
+
+                return consulta.ToList();
+            }
+        }
+
         public Post GetPostDetail(int id)
         {
             using (var context = new Killar_GuildContext())
             {
-                Post registro =
-                    context.Posts.Where(p => p.Id == id).SingleOrDefault();
+                Post registro = context.Posts.Where(p => p.Id == id).SingleOrDefault();
                 return registro;
             }
         }
