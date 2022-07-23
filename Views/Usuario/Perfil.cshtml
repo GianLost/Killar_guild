@@ -1,56 +1,67 @@
-
 @model List<Usuario>
 
 @{
     ViewData["Title"] = "Perfil";
 }
 
-@foreach (Usuario u in Model)
-{
-    <h1>Olá @u.Nome, Esses são seus dados!</h1>
+<body class="text-center col-md-8 col-lg-8 col-sm-8 offset-md-2">
 
-    <div class="dados-pessoais">
+    @foreach (Usuario u in Model)
+    {
 
-        <span><b>Nome:</b></span>
-        <p>@u.Nome</p>
+        <div class="container perf">
 
-        <span><b>Data de Nascimento</b></span>
-        <p>@u.DataNasc.ToString("dd/MM/yyyy")</p>
+            <h1 class=" text-center mt-5">Olá @u.Nome</h1>
 
-        <span><b>Whatsapp</b></span>
-        <p>@u.WhatsPub</p>
+            <div class="row">
+                <div class="col-md-6 mr-5 mt-5 dados-pessoais perf2">
 
-        <span><b>E-mail</b></span>
-        <p>@u.EmailPub</p>
+                    <span><b>Nome:</b></span>
+                    <p>@u.Nome</p>
 
-        <span><b>Tipo</b></span>
-        <p>@u.Tipo</p>
+                    <span><b>Data de Nascimento</b></span>
+                    <p>@u.DataNasc.ToString("dd/MM/yyyy")</p>
 
-    </div>
+                    <span><b>Whatsapp</b></span>
+                    <p>@u.WhatsPub</p>
 
-    <div class="dados-player">
+                    <span><b>E-mail</b></span>
+                    <p>@u.EmailPub</p>
 
-        <span><b>Nick Wr(aaaa#0000):</b></span>
-        <p>@u.NickWr</p>
+                </div>
+            </div>
 
-        <span><b>Nick Name:</b></span>
-        <p>@u.LoginNamePub</p>
+            <div class="row">
+                <div class=" col-md-6 mr-5 mt-5 dados-player perf3">
 
-        <span><b>Sua senha:</b></span>
-        <p>@u.CheckSenhaPub</p>
+                    <span><b>Nick Wr(aaaa#0000):</b></span>
+                    <p>@u.NickWr</p>
 
-        <span><b>Elo Atual:</b></span>
-        <p>@u.Elo</p>
+                    <span><b>Nick Name:</b></span>
+                    <p>@u.LoginNamePub</p>
 
-        <span><b>Lane Principal:</b></span>
-        <p>@u.Lane</p>
+                    <span><b>Sua senha:</b></span>
+                    <p>@u.CheckSenhaPub</p>
 
-    </div>
+                    <span><b>Elo Atual:</b></span>
+                    <p>@u.Elo</p>
 
-    <div class="operacoes">
+                    <span><b>Lane Principal:</b></span>
+                    <p>@u.Lane</p>
 
-        <a href="/Usuario/EditarUser?Id=@u.Id">Alterar dados | </a>
-        <a href="/Usuario/ExcluirUser?Id=@u.Id"> Exluir Usuário</a>
+                </div>
+            </div>
 
-    </div>
-}
+
+        </div>
+
+        <div class="operacoes mt-3">
+
+            <a class="btn btn-lg btn-dark mr-5" href="/Usuario/EditarUser?Id=@u.Id">Alterar dados</a>
+            <a class="btn btn-lg btn-dark" href="/Usuario/ExcluirUser?Id=@u.Id"> Exluir Usuário</a>
+
+        </div>
+
+    }
+
+</body>

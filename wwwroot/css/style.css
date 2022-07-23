@@ -101,12 +101,13 @@
     background-color: #007bff;
     box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
     margin-left: 50px;
+    width: 100%;
 }
 
 .bord-cad h2 {
     font-family: 'fantasy';
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: 2px underline #fff;
 }
 
@@ -155,7 +156,8 @@
 }
 
 .but-index {
-    width: 300px;
+    margin: auto;
+    width: 250px;
     height: 50px;
     border-radius: 8px;
     font-size: 20px;
@@ -169,12 +171,66 @@
     box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 8px;
 }
 
+.but-list {
+    margin-left: 40px;
+}
+
 .last {
-    background-color: rgba(37, 84, 211, 0.833);
+    background-color: #007bff;
 }
 
 .frame {
     margin-top: 10px;
+}
+
+.div-end {
+    color: #fff;
+}
+
+.div-end h2 {
+    color: rgb(21, 19, 19);
+}
+
+.h22 {
+    color: rgb(227, 191, 49);
+}
+
+.perf {
+    margin-top: 80px;
+    justify-content: center;
+    font-family: 'fantasy';
+    border-radius: 30px;
+    padding: 30px;
+    color: #fff;
+    background-image: url("../imagens/fundomain.jpg");
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.712) -20px -25px 15px;
+}
+
+.perf2 {
+    border: 2px solid rgb(227, 191, 49);
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 10px;
+}
+
+.perf span {
+    font-size: 30px;
+    color: rgb(227, 191, 49);
+}
+
+.perf p {
+    font-size: 20px;
+}
+
+.perf3 {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin-left: 50%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 10px;
 }
 
 
@@ -282,7 +338,11 @@
     }
 }
 
-
-/*@media (max-width: 500px) {
-    .form-cad img {}
-}*
+@media (max-width: 768px) {
+    .div-cad img {
+        display: none;
+    }
+    .form-cad h1 {
+        font-size: 50px;
+    }
+}

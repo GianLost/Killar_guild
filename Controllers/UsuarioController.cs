@@ -35,7 +35,7 @@ namespace Killar_Guild.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            //Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             UsuarioService ur = new UsuarioService();
             int IdUserSession = (int) HttpContext.Session.GetInt32("IdUsuario");
             List<Usuario> ListaUsers = ur.Profile(IdUserSession);
