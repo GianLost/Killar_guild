@@ -234,6 +234,101 @@
 }
 
 
+/*css cadastro de posts*/
+
+.body-post {
+    background-image: url("../Imagens/fundo-post.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cadpost {
+    margin-top: 80px;
+    opacity: 90%;
+}
+
+.cadpost h2 {
+    color: rgb(55, 0, 81);
+    text-align: right;
+    font-size: 45px;
+    text-shadow: rgba(214, 213, 213, 0.756) -5px 5px 5px;
+}
+
+.cadpost input {
+    border: 3px solid rgb(142, 59, 180);
+    background: rgba(39, 35, 35, 0.568);
+    box-shadow: rgba(255, 255, 255, 0.712) -5px 5px 5px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.cadpost input::placeholder {
+    font-size: 20px;
+}
+
+.cadpost textarea::placeholder {
+    font-size: 20px;
+}
+
+.cadpost textarea {
+    border: 3px solid rgb(142, 59, 180);
+    background: rgba(39, 35, 35, 0.568);
+    color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.712) -5px 5px 5px;
+    font-size: 18px;
+}
+
+.but-post {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.jumb {
+    background-image: url("../Imagens/post-fundo-.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.795) -18px 18px 10px;
+}
+
+
+/*css comunidade*/
+
+.main-comunity {
+    background-color: rgba(29, 102, 204, 0.779);
+    box-shadow: rgba(0, 0, 0, 0.795) -18px 18px 10px;
+    margin-top: 100px;
+    font-family: 'fantasy';
+}
+
+.comunity-cont {
+    padding: 30px;
+}
+
+.comunity-cont h2 {
+    margin-top: -80px;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.628) 5px 8px 5px;
+}
+
+.p-text p {
+    color: rgb(255, 255, 255);
+}
+
+.comunity-cont span {
+    color: rgb(0, 47, 112);
+    text-shadow: rgb(255, 255, 255) -5px 5px 8px;
+    font-weight: bold;
+}
+
+.hr-comunity {
+    background-color: #fff;
+    box-shadow: rgb(0, 0, 0) -8px 8px 5px;
+}
+
+
 /*css da página de vitrine de posts/Notícias (Comunidade)*/
 
 .artigo {
@@ -344,5 +439,15 @@
     }
     .form-cad h1 {
         font-size: 50px;
+    }
+    .body-post {
+        background-image: none;
+    }
+    .cadpost {
+        opacity: 100%;
+    }
+    .cadpost h2 {
+        font-size: 35px;
+        margin-top: 45px;
     }
 }

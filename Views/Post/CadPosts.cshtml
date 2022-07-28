@@ -5,27 +5,47 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<h2>Cadastro de Post do Blog</h2>
+<body>
 
-<form id="frmCadastro" asp-controller="Post" asp-action="CadPosts" method="post">
+    <main role="main" class="body-post img-fluid">
 
-    <p>
-        <label asp-for="Titulo">Título</label><br />
-        <input asp-for="Titulo" />
-    </p>
+        <div class="row justify-content-md-center cadpost">
 
-    <p>
-        <label asp-for="Texto" style="vertical-align:middle;">Texto</label><br />
-        <textarea asp-for="Texto" cols="40" rows="5"></textarea>
-    </p>
+            <!--<img class="img-fluid" src="../Imagens/post-fundo-.png" alt="">-->
 
-    <p>
-        <label asp-for="DataPost">Data</label><br />
-        <input asp-for="DataPost" />
-    </p>
+            <div class="jumbotron col-md-6 col-lg-6 col-sm-12 jumb">
+                <h2 class="mb-4 mr-5">Crie seu Post</h2>
+                <div class="">
 
-    <input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="UsuarioId">
-    <input type="hidden" name="Id" asp-for="Id">
-    <input type="submit" value="Salvar" />
+                    <form id="frmCadastro" asp-controller="Post" asp-action="CadPosts" method="post">
 
-</form>
+                        <p>
+                            <input class="form-control btn-block" type="text" placeholder="Título" asp-for="Titulo" required/>
+                        </p>
+
+                        <p>
+                            <textarea class="form-control btn-block" placeholder="Insira seu Texto" asp-for="Texto" cols="40" rows="5" required></textarea>
+                        </p>
+
+                        <p>
+
+                            <input class="form-control btn-block" placeholder="Data" asp-for="DataPost" required/>
+
+                        </p>
+
+                        <input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="UsuarioId">
+                        <input type="hidden" name="Id" asp-for="Id">
+                        <input type="hidden" name="UsuarioId" asp-for="UsuarioId">
+                        <button class="btn btn-primary btn-lg mt-5 but-post" type="submit">Postar</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>

@@ -9,7 +9,7 @@ namespace Killar_Guild.Controllers
         [HttpPost]
         public IActionResult CadComent(Comentario c)
         {
-            Autenticacao.CheckLogin(this);
+            //Autenticacao.CheckLogin(this);
             ComentarioService service = new ComentarioService();
             c.DataComent = DateTime.Now; //data do comentário é o momento em que ele foi cadastrado
             service.CreateComentario (c);

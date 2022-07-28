@@ -1,0 +1,15 @@
+ate então no meu projeto quero utilizar a sessão para cadastrar um usuario q pode ser admin ou padrao, mas somente usuarios admins podem cadastrar novos usuarios, usuarios padrao apenas utilizam o sistema para navegar.
+o que planejava era criar um sistema de perfil para o usuario padrao em forma de listagem dos registros adquiridos pelo Id da sessão.
+e que o usuario admin tivesse uma listagem completa de usuarios cadastrados ao inves de só o do usuário logado.
+
+a intenção é ter um sistema onde só admins cadastrem novos usuarios, e que usuarios padrao possam apenas ver suas informações e alteralas de acordo com a necessidade.
+
+comunidade - posts e comentários
+
+notícias - artigos
+
+galeria de vídeo
+
+blog => crie um post - notícias/artigos
+
+*ser maior de 16

@@ -9,7 +9,7 @@ namespace Killar_Guild.Models
 
         public static int PADRAO = 1;
 
-        public int Id { get; set; }
+        public int Id { get; set; } // primary key por convenção
 
         public string Nome { get; set; }
 
@@ -33,9 +33,9 @@ namespace Killar_Guild.Models
 
         public int Tipo { get; set; }
 
-        public ICollection<Post> ListPost { get; set; }
+        public ICollection<Post> ListPost { get; set; } // lista de post
 
-        public ICollection<Comentario> ListComent { get; set; }
+        public ICollection<Comentario> ListComent { get; set; } // Lista de comentários
 
         public Usuario()
         {

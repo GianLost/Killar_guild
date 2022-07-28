@@ -3,29 +3,101 @@
     Layout = "_LayoutBlog";
     ViewData["Title"] = "Comunidade";
 }
-<html>
 
-<body class="text-Justify col-xl-6 col-md-6 col-lg-6 col-sm-12 offset-md-3">
-    <div class="container mt-5">
-        @foreach (Post item in Model)
-        {
-            <article id="post-@item.Id" class="post artigo text-justify">
-                <h2 class="post-title">@item.Titulo</h2>
-                <span class="post-date">@item.DataPost</span>
-                <div class="post-content mb-3">
-                    <p>@item.Texto</p>
+
+<body class="text-Justify col-md-6 offset-md-3">
+
+    <main role="main" class="main-comunity">
+
+        <div class="container-fluid mt-5 mb-5">
+            @foreach (Post item in Model)
+            {
+                <div class="row mt-5">
+
+                    <article id="post-@item.Id" class="comunity-cont artigo text-justify">
+
+                        <h2 class="">@item.Titulo</h2>
+
+                        <hr class="hr-comunity">
+
+                        <span class="post-date mt-5">@item.DataPost</span>
+
+                        <hr class="">
+
+                        <div class="p-text post-content mt-4 mb-4">
+
+                            <p>@item.Texto</p>
+
+                        </div>
+
+                        <hr class="">
+
+                        <div class="modal-comentario">
+
+                            <section id="comments-@item.Id" class="comments">
+
+                                <h4 class="comente">Comente nesta publicação:</h4>
+
+                                <partial name="_FormComentarios" model="@item.Id" />
+
+                                <input type="submit" data-toggle="modal" data-target="#modalcomentarios" value="Comentarios" class="mt-2 btn btn-sm btn-outline-light" />
+
+                                <div class="modal fade" id="modalcomentarios" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLongTitle">COMENTARIOS
+                                                </h5>
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                                    <span aria-hidden="true">&times;</span>
+
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body mod-body">
+
+                                                <article>
+
+                                                    <partial name="_ListaComentarios" model="@item.Comentarios" />
+
+                                                </article>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-dark"
+                                                data-dismiss="modal">Close</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </article>
+
                 </div>
-                <section id="comments-@item.Id" class="comments">
-                    <h4 class="ml-3 comente">Comente nesta publicação:</h4>
-                    <partial name="_ListaComentarios" model="@item.Comentarios" />
-                    <partial name="_FormComentarios" model="@item.Id" />
-                    
-                </section>
-            </article>
-            <hr class="mt-5 mb-5">
-        }
 
-    </div>
+                <hr class="">
+            }
+
+        </div>
+
+    </main>
+
 </body>
-
-</html>
