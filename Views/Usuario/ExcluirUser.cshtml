@@ -1,21 +1,29 @@
 @model Usuario
 
-<div class="container">
+<div class="container mt-5">
+    <div class="card-dell col-md-5 offset-md-3">
+        <div class="row">
 
-    <div class="mt-5">
+            <div class="mt-2">
 
-        <h1 class="">Alerta</h1>
-        <h2>Tem certeza que deseja escluir o Usuario ?</h2>
+                <h1 class="text-danger text-center bold">Alerta!</h1>
+                <hr>
+                <p class="text-justify">Tem certeza que deseja escluir o Usuario? Essa ação irá excluir sua conta de forma permanente, e não poderá ser desfeita.</p>
+                <hr>
 
+            </div>
+
+        </div>
+        <form asp-action="ExcluirUser" method="post">
+
+            <input type="hidden" asp-for="Id">
+
+            <input class="btn btn-sm btn-dark mt-3" name="decisao" type="submit" value="Cancelar">
+            <input class="btn btn-sm btn-dark mt-3" name="decisao" type="submit" value="Excluir">
+
+        </form>
     </div>
 
-    <form asp-action="ExcluirUser" method="post">
 
-        <input type="hidden" asp-for="Id">
-
-        <input name="decisao" type="submit" value="Cancelar">
-        <input name="decisao" type="submit" value="Excluir">
-
-    </form>
 
 </div>

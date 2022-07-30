@@ -29,12 +29,6 @@ function ValidarForm() {
         return (false);
     }
 
-    /*if (DateTime.Year.Now.ToString('dd/MM/yyyy') - DataNasc.Year < 18) {
-        alert("É necessário +18 para se cadastrar");
-        formuser.DataNasc.focus();
-        return (false);
-    }*/
-
     if (WhatsPub == "") {
         alert("O campo Telefone é obrigatório");
         formuser.WhatsPub.focus();

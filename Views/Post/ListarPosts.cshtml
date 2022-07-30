@@ -14,16 +14,15 @@
 
                 <div class="col-md-12 col-sm-4 lista-user">
 
-                    <h2>Listagem de Posts</h2>
+                    <h2 class="text-center">Listagem de Posts</h2>
 
                     @if (Model != null)
                     {
-                        <table id="tblPosts" class="table table-striped table-responsive table-dark">
+                        <table id="tblPosts" class="table col-md-6 offset-md-3 table-striped table-responsive table-dark">
                             <thead>
                                 <tr>
                                     <th>Título</th>
                                     <th>Data</th>
-                                    <th>Nº de comentários</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -33,9 +32,10 @@
                                     <tr>
                                         <td>@item.Titulo</td>
                                         <td>@item.DataPost</td>
-                                        <td>@(item.Comentarios == null ? 0 : item.Comentarios.Count())</td>
-                                        <td><a href="UpdatePost?id=@item.Id">Editar</a> | <a href="DelPost?id=@item.Id">Excluir</a></td>
+                                        <td><a class="mt-2 btn btn-sm btn-outline-primary" href="UpdatePost?id=@item.Id">Editar</a>
+                                    <a class="mt-2 btn btn-sm btn-outline-primary" href="DelPost?id=@item.Id">Excluir</a></td>
                                     </tr>
+                                    
                                 }
                             </tbody>
                         </table>

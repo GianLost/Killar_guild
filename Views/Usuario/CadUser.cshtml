@@ -45,9 +45,9 @@
                         <div class="col-md-6 mb-3">
                             <input placeholder="Seu Nome" asp-for="Nome" type="text" class="form-control" required>
                         </div>
-
+                        
                         <div class="col-md-6 mb-3">
-                            <input placeholder="Data de Nascimento" asp-for="DataNasc" type="date" class="form-control"
+                            <input placeholder="Data de Nascimento" id="DataNasc" asp-for="DataNasc" type="date" class="form-control"
                                 required>
                         </div>
 
@@ -169,7 +169,7 @@
                     <input value=@Context.Session.GetInt32("IdUsuario") type="hidden" asp-for="Id">
 
                     <button class="btn btn-primary btn-lg btn-block" type="submit"
-                        onclick="return ValidarForm()">Cadastre-se</button>
+                    onclick="return ValidarForm()">Cadastre-se</button>
 
                     <div class="mt-5 frase">
                         <p>Já se cadastrou? <a asp-controller="Home" asp-action="Login"

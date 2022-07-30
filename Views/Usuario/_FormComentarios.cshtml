@@ -5,7 +5,7 @@
 <form asp-action="CadComent" asp-controller="Comentario" method="POST" class="form-comment">
     <input name="PostId" value="@Model" type="hidden"/>
     <input type="hidden" name="UsuarioId" value=@Context.Session.GetInt32("IdUsuario") asp-for="@Model"/>
-    <input class="form-control btn-block mb-3" type="text" name="Autor" placeholder="Nome" class="comment-name mb-3 ml-3" />
-    <textarea class="form-control mb-2" name="Conteudo" placeholder="Comentário" class="comment-text ml-3" rows="4" cols="40"></textarea>
+    <input class="form-control btn-block mb-2" type="text" name="Autor" placeholder="Nome" class="comment-name mb-3 ml-3" required/>
+    <textarea class="form-control mb-2" name="Conteudo" placeholder="Comentário" class="comment-text ml-3" rows="4" cols="40" required></textarea>
     <input class="btn btn-sm btn-dark" type="submit" value="Comentar"/>
 </form>

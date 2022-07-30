@@ -3,20 +3,26 @@
     ViewData["Title"] = "Exclusão de Post";
 }
 
-<div class="container">
+<div class="container mt-5">
+    <div class="card-dell col-md-5 offset-md-3">
+        <div class="row">
 
-    <div class="mt-5">
+            <div class="mt-2">
 
-        <h2>Exclusão de registro</h2>
-        <p>Esta ação excluirá o post <strong>@Model.Titulo</strong> e a operação não poderá ser desfeita</p>
-        <p>Deseja mesmo excluir?</p>
+                <h1 class="text-danger text-center bold">Alerta!</h1>
+                <hr>
+                <p class="text-justify">Esta ação excluirá o post <strong>@Model.Titulo</strong> e a operação não poderá
+                    ser desfeita. Deseja excluir a postagem?</p>
+                <hr>
 
+            </div>
+
+        </div>
+        <form asp-action="DelPost" method="POST">
+            <input type="hidden" asp-for="Id" />
+            <button class="btn btn-sm btn-dark mt-3" type="submit" name="decisao" value="n">Não</button>
+            <button class="btn btn-sm btn-dark mt-3" type="submit" name="decisao" value="s">Sim</button>
+        </form>
     </div>
-
-    <form asp-action="DelPost" method="POST">
-        <input type="hidden" asp-for="Id" />
-        <button type="submit" name="decisao" value="n">Não</button>
-        <button type="submit" name="decisao" value="s">Sim</button>
-    </form>
 
 </div>

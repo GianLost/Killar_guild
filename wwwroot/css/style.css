@@ -1,3 +1,7 @@
+* {
+    font-family: monospace;
+}
+
 .custom-carosel {
     text-align: justify;
     font-family: 'fantasy';
@@ -127,7 +131,7 @@
 
 .form-signin h1 {
     color: #007bff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'monospace';
     font-size: 40px;
     font-weight: bold;
 }
@@ -195,42 +199,57 @@
     color: rgb(227, 191, 49);
 }
 
-.perf {
-    margin-top: 80px;
-    justify-content: center;
-    font-family: 'fantasy';
-    border-radius: 30px;
+
+/*css de perfil*/
+
+.perfil {
+    margin-top: 90px;
     padding: 30px;
-    color: #fff;
-    background-image: url("../imagens/fundomain.jpg");
-    background-size: cover;
-    box-shadow: rgba(0, 0, 0, 0.712) -20px -25px 15px;
+    font-family: monospace;
+    border-radius: 90px 0px 30px 0px;
+    box-shadow: rgba(0, 0, 0, 0.712) -22px 18px 8px;
 }
 
-.perf2 {
-    border: 2px solid rgb(227, 191, 49);
-    border-radius: 30px;
-    text-align: center;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 10px;
+.perfil img {
+    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 20px;
 }
 
-.perf span {
+.perfil h1 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.perfil span {
+    font-weight: 10;
     font-size: 30px;
-    color: rgb(227, 191, 49);
 }
 
-.perf p {
+.perfil label {
+    font-weight: bold;
     font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
-.perf3 {
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 30px;
+.perfil input {
+    border-bottom: 2px solid rgba(29, 102, 204, 0.779);
+    background-color: rgba(42, 34, 157, 0.651);
+}
+
+.perfil input::placeholder {
+    color: rgba(29, 102, 204, 0.779);
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-    margin-left: 50%;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 10px;
+}
+
+.game {
+    text-align: justify;
+    padding: 15px;
+}
+
+.pessoal {
+    text-align: justify;
+    padding: 15px;
 }
 
 
@@ -248,10 +267,11 @@
 }
 
 .cadpost h2 {
-    color: rgb(55, 0, 81);
+    color: rgb(227, 191, 49);
+    font-weight: bold;
     text-align: right;
     font-size: 45px;
-    text-shadow: rgba(214, 213, 213, 0.756) -5px 5px 5px;
+    text-shadow: rgba(0, 0, 0, 0.756) -8px 8px 3px;
 }
 
 .cadpost input {
@@ -292,6 +312,68 @@
 }
 
 
+/*css quem somos*/
+
+.card {
+    border: 2px solid rgba(29, 102, 204, 0.963);
+}
+
+.card h5 {
+    font-weight: bold;
+}
+
+.quem-somos {
+    margin-top: 80px;
+}
+
+.cards-players {
+    background-image: url("../Imagens/log-fundo.jpg");
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.image {
+    border: 1px solid rgba(29, 102, 204, 0.963);
+}
+
+.image:hover {
+    transition: ease-in-out 0.6s;
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.795) -8px 8px 10px;
+    cursor: pointer;
+}
+
+.qs-2 {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.adms {
+    border: 2px solid rgba(29, 102, 204, 0.963);
+}
+
+.list {
+    background-color: rgba(29, 102, 204, 0.779);
+    color: #fff;
+}
+
+.play-title {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: rgba(240, 235, 235, 0.89) -8px 8px 10px;
+}
+
+.player ul {
+    list-style: none;
+}
+
+.player h5 {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(29, 102, 204, 0.963);
+}
+
+
 /*css comunidade*/
 
 .main-comunity {
@@ -319,7 +401,7 @@
 
 .comunity-cont span {
     color: rgb(0, 47, 112);
-    text-shadow: rgb(255, 255, 255) -5px 5px 8px;
+    text-shadow: rgb(31, 28, 28) -5px 5px 8px;
     font-weight: bold;
 }
 
@@ -335,6 +417,10 @@
     margin-top: 80px;
 }
 
+.artigo h2 {
+    color: rgb(227, 191, 49);
+}
+
 .post-date {
     font-size: 0.8em;
     font-style: italic;
@@ -342,6 +428,16 @@
 
 .comente {
     font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+/*css delluser*/
+
+.card-dell {
+    margin-top: 80px;
+    border: 2px solid rgba(184, 23, 23, 0.8);
+    padding: 30px;
 }
 
 
@@ -449,5 +545,11 @@
     .cadpost h2 {
         font-size: 35px;
         margin-top: 45px;
+    }
+    .card {
+        margin-left: 15%;
+    }
+    .player {
+        margin-left: -30px;
     }
 }

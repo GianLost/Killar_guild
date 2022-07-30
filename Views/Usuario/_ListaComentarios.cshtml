@@ -2,7 +2,7 @@
 
 @foreach (Comentario comment in Model)
 {
-    <h5>@comment.Autor - @comment.DataComent.ToString("dd/MM/yy HH:mm")</h5>
+    <h5>@comment.Autor </h5><span class="post-date">@comment.DataComent.ToString("dd/MM/yy HH:mm")</span>
     <p>@comment.Conteudo</p>
     <hr>
 

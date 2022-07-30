@@ -15,6 +15,7 @@ namespace Killar_Guild.Controllers
         [HttpPost]
         public IActionResult CadUser(Usuario u)
         {
+            
             UsuarioService us = new UsuarioService();
             us.AddUser (u);
             ViewData["mensagem"] = "Cadastrado com sucesso";
@@ -23,8 +24,8 @@ namespace Killar_Guild.Controllers
 
         public IActionResult ListarUser()
         {
-            //Autenticacao.CheckLogin(this);
-            //Autenticacao.VerificaSeUsuarioEAdmin(this);
+            Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaSeUsuarioEAdmin(this);
             return View(new UsuarioService().ListUser());
         }
 
@@ -35,7 +36,7 @@ namespace Killar_Guild.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            //Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             UsuarioService ur = new UsuarioService();
             int IdUserSession = (int) HttpContext.Session.GetInt32("IdUsuario");
             List<Usuario> ListaUsers = ur.Profile(IdUserSession);
@@ -44,7 +45,7 @@ namespace Killar_Guild.Controllers
 
         public IActionResult EditarUser(int id)
         {
-            //Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             Usuario usuarioEncontrado = new UsuarioService().ListUser(id);
             return View(usuarioEncontrado);
         }
@@ -52,7 +53,7 @@ namespace Killar_Guild.Controllers
         [HttpPost]
         public IActionResult EditarUser(Usuario userEdit)
         {
-            //Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             new UsuarioService().EditUser(userEdit);
             return RedirectToAction("Index", "Home");
         }
@@ -61,7 +62,7 @@ namespace Killar_Guild.Controllers
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
-                //Autenticacao.CheckLogin(this);
+                Autenticacao.CheckLogin(this);
                 UsuarioService us = new UsuarioService();
                 Usuario userEncontrado = us.SearchForId(id);
                 return View(userEncontrado);
@@ -86,7 +87,7 @@ namespace Killar_Guild.Controllers
 
         public IActionResult Comunidade()
         {
-            //Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             PostService ps = new PostService();
             ICollection<Post> lista = ps.GetPostsFull();
             return View(lista);

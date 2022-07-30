@@ -4,64 +4,68 @@
     ViewData["Title"] = "Perfil";
 }
 
-<body class="text-center col-md-8 col-lg-8 col-sm-8 offset-md-2">
+<body class="text-center">
 
-    @foreach (Usuario u in Model)
-    {
+    <main role="main" class="body-perf">
+        @foreach (Usuario u in Model)
+        {
 
-        <div class="container perf">
+            <div class="container col-md-8 perfil border border-primary">
 
-            <h1 class=" text-center mt-5">Olá @u.Nome</h1>
+                <h1 class=" text-center mb-4">Olá @u.Nome,<span> este são seus dados.</span></h1>
+                <hr class="mb-4 mt-3">
+                <img class="rounded-circle border border-primary" src="../Imagens/perfil.png" alt="">
+                <hr class="mb-4">
+                <div class="row">
+                    <div class="col-md-6 pessoal">
 
-            <div class="row">
-                <div class="col-md-6 mr-5 mt-5 dados-pessoais perf2">
+                        <label for="">Nome:</label>
+                        <input class="form-control" placeholder="@u.Nome" readonly />
 
-                    <span><b>Nome:</b></span>
-                    <p>@u.Nome</p>
+                        <label for="">Data de Nascimento:</label>
+                        <input class="form-control" placeholder="@u.DataNasc.ToString("dd/MM/yyyy")" readonly />
 
-                    <span><b>Data de Nascimento</b></span>
-                    <p>@u.DataNasc.ToString("dd/MM/yyyy")</p>
+                        <label for="">Whatsapp:</label>
+                        <input class="form-control" placeholder="@u.WhatsPub" readonly />
 
-                    <span><b>Whatsapp</b></span>
-                    <p>@u.WhatsPub</p>
+                        <label for="">E-mail:</label>
+                        <input class="form-control" placeholder="@u.EmailPub" readonly />
 
-                    <span><b>E-mail</b></span>
-                    <p>@u.EmailPub</p>
+                    </div>
 
+                    <div class=" col-md-6 game">
+
+                        <label for="">Nick Wr(aaaa#0000):</label>
+                        <input class="form-control" placeholder="@u.NickWr" readonly />
+
+                        <label for="">Nick Name</label>
+                        <input class="form-control" placeholder="@u.LoginNamePub" readonly />
+
+                        <label for="">Sua senha:</label>
+                        <input class="form-control" placeholder="@u.CheckSenhaPub" readonly />
+
+                        <label for="">Elo Atual:</label>
+                        <input class="form-control" placeholder="@u.Elo" readonly />
+
+                        <label for="">Lane Principal:</label>
+                        <input class="form-control" placeholder="@u.Lane" readonly />
+                        <span><b></b></span>
+
+                    </div>
                 </div>
+
+
             </div>
 
-            <div class="row">
-                <div class=" col-md-6 mr-5 mt-5 dados-player perf3">
+            <div class="operacoes mt-3">
 
-                    <span><b>Nick Wr(aaaa#0000):</b></span>
-                    <p>@u.NickWr</p>
+                <a class="btn btn-lg btn-dark mr-5 mt-4" href="/Usuario/EditarUser?Id=@u.Id">Alterar dados</a>
+                <a class="btn btn-lg btn-dark mt-4 mr-5" href="/Usuario/ExcluirUser?Id=@u.Id"> Exluir Usuário</a>
 
-                    <span><b>Nick Name:</b></span>
-                    <p>@u.LoginNamePub</p>
-
-                    <span><b>Sua senha:</b></span>
-                    <p>@u.CheckSenhaPub</p>
-
-                    <span><b>Elo Atual:</b></span>
-                    <p>@u.Elo</p>
-
-                    <span><b>Lane Principal:</b></span>
-                    <p>@u.Lane</p>
-
-                </div>
             </div>
 
+        }
 
-        </div>
-
-        <div class="operacoes mt-3">
-
-            <a class="btn btn-lg btn-dark mr-5" href="/Usuario/EditarUser?Id=@u.Id">Alterar dados</a>
-            <a class="btn btn-lg btn-dark" href="/Usuario/ExcluirUser?Id=@u.Id"> Exluir Usuário</a>
-
-        </div>
-
-    }
+    </main>
 
 </body>
