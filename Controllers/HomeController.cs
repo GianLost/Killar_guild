@@ -40,7 +40,7 @@ namespace Killar_Guild.Controllers
 
         public IActionResult Error()
         {
-            return View(new ErrorViewModel {
+            return View(new {
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
             });
         }

@@ -1,10 +1,9 @@
 * {
-    font-family: monospace;
+    font-family: 'fantasy';
 }
 
 .custom-carosel {
     text-align: justify;
-    font-family: 'fantasy';
 }
 
 .custom-carosel h1 {
@@ -175,10 +174,6 @@
     box-shadow: rgba(0, 0, 0, 0.712) -8px 8px 8px;
 }
 
-.but-list {
-    margin-left: 40px;
-}
-
 .last {
     background-color: #007bff;
 }
@@ -300,7 +295,6 @@
 
 .but-post {
     width: 80%;
-    margin-left: 10%;
 }
 
 .jumb {
@@ -551,5 +545,9 @@
     }
     .player {
         margin-left: -30px;
+    }
+
+    .qsImg {
+        margin-left: 7%;
     }
 }

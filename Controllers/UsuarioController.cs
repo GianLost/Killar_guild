@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Killar_Guild.Models;
 using Microsoft.AspNetCore.Http;
@@ -15,11 +16,18 @@ namespace Killar_Guild.Controllers
         [HttpPost]
         public IActionResult CadUser(Usuario u)
         {
-            
-            UsuarioService us = new UsuarioService();
-            us.AddUser (u);
-            ViewData["mensagem"] = "Cadastrado com sucesso";
-            return RedirectToAction("Login", "Home");
+            try
+            {
+                UsuarioService us = new UsuarioService();
+                us.AddUser (u);
+                ViewData["mensagem"] = "Cadastrado com sucesso";
+                return RedirectToAction("Login", "Home");
+            }catch{
+                    UsuarioService us = new UsuarioService();
+                    us.AddUser (u);
+                    ViewData["mensagem"] = "Cadastrado com sucesso";
+                    return RedirectToAction("Login", "Home");
+            }
         }
 
         public IActionResult ListarUser()
@@ -95,6 +103,7 @@ namespace Killar_Guild.Controllers
 
         public IActionResult QuemSomos()
         {
+            Autenticacao.CheckLogin(this);
             return View();
         }
 

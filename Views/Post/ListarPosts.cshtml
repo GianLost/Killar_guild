@@ -4,7 +4,7 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<body class="text-justify">
+<body class="text-center">
 
     <main role="main">
 
@@ -18,7 +18,7 @@
 
                     @if (Model != null)
                     {
-                        <table id="tblPosts" class="table col-md-6 offset-md-3 table-striped table-responsive table-dark">
+                        <table id="tblPosts" class="table col-md-6 offset-md-3 table-striped table-responsive table-dark text-justify">
                             <thead>
                                 <tr>
                                     <th>Título</th>
@@ -33,7 +33,7 @@
                                         <td>@item.Titulo</td>
                                         <td>@item.DataPost</td>
                                         <td><a class="mt-2 btn btn-sm btn-outline-primary" href="UpdatePost?id=@item.Id">Editar</a>
-                                    <a class="mt-2 btn btn-sm btn-outline-primary" href="DelPost?id=@item.Id">Excluir</a></td>
+                                        <a class="mt-2 btn btn-sm btn-outline-primary" href="DelPost?id=@item.Id">Excluir</a></td>
                                     </tr>
                                     
                                 }

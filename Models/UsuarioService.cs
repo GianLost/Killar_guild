@@ -7,15 +7,25 @@ namespace Killar_Guild.Models
 {
     public class UsuarioService
     {
-        private const string DadosConexao = "Server=localhost;DataBase=DbKillarGuild;Uid=root;";
+        private const string DadosConexao = "Server=MYSQL8001.site4now.net;Database=db_a8d790_killufo;Uid=a8d790_killufo;Pwd=Ann@1170615";
         public void AddUser(Usuario newUser)
         {
             using (Killar_GuildContext db = new Killar_GuildContext())
             {
-                newUser.SenhaPub = Criptografia.TextoCriptografado(newUser.SenhaPub);
-                newUser.CheckSenhaPub = Criptografia.TextoCriptografado(newUser.CheckSenhaPub);
-                db.Usuarios.Add (newUser);
-                db.SaveChanges();
+                try 
+                {
+                    newUser.SenhaPub = Criptografia.TextoCriptografado(newUser.SenhaPub);
+                    newUser.CheckSenhaPub = Criptografia.TextoCriptografado(newUser.CheckSenhaPub);
+                    db.Usuarios.Add (newUser);
+                    db.SaveChanges();
+
+                }catch{
+                    newUser.SenhaPub = Criptografia.TextoCriptografado(newUser.SenhaPub);
+                    newUser.CheckSenhaPub = Criptografia.TextoCriptografado(newUser.CheckSenhaPub);
+                    db.Usuarios.Add (newUser);
+                    db.SaveChanges();
+                }
+                
             }
         }
 
