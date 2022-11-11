@@ -7,7 +7,7 @@ namespace Killar_Guild.Models
 {
     public class UsuarioService
     {
-        private const string DadosConexao = "Server=MYSQL8001.site4now.net;Database=db_a8d790_killufo;Uid=a8d790_killufo;Pwd=Ann@1170615";
+        private const string DadosConexao = "Server=localhost;DataBase=dbkillarguild;Uid=root;";
         public void AddUser(Usuario newUser)
         {
             using (Killar_GuildContext db = new Killar_GuildContext())

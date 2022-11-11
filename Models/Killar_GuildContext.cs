@@ -8,7 +8,7 @@ namespace Killar_Guild.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Server=MYSQL8001.site4now.net;Database=db_a8d790_killufo;Uid=a8d790_killufo;Pwd=Ann@1170615"); // String de conexão
+            optionsBuilder.UseMySql("Server=localhost;DataBase=dbkillarguild;Uid=root;"); // String de conexão
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
