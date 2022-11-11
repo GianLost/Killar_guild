@@ -22,11 +22,13 @@ namespace Killar_Guild.Controllers
                 us.AddUser (u);
                 ViewData["mensagem"] = "Cadastrado com sucesso";
                 return RedirectToAction("Login", "Home");
-            }catch{
-                    UsuarioService us = new UsuarioService();
-                    us.AddUser (u);
-                    ViewData["mensagem"] = "Cadastrado com sucesso";
-                    return RedirectToAction("Login", "Home");
+            }
+            catch
+            {
+                UsuarioService us = new UsuarioService();
+                us.AddUser (u);
+                ViewData["mensagem"] = "Cadastrado com sucesso";
+                return RedirectToAction("Login", "Home");
             }
         }
 

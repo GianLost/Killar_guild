@@ -57,6 +57,7 @@ namespace Killar_Guild.Controllers
         public IActionResult DelPost(int id)
         {
             Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaSeUsuarioEAdmin(this);
             PostService ps = new PostService();
             Post post = ps.GetPostDetail(id);
 
@@ -69,6 +70,7 @@ namespace Killar_Guild.Controllers
             if (decisao == "s")
             {
                 Autenticacao.CheckLogin(this);
+                Autenticacao.VerificaSeUsuarioEAdmin(this);
                 PostService service = new PostService();
                 service.DeletePost (id);
             }

@@ -33,16 +33,10 @@ namespace Killar_Guild.Controllers
             }
             else
             {
-            ViewData["Erro"] = "Usuário inválido";
+            ViewData["Erro"] = "Usuário ou senha inválidos";
             return View();
             }
         }
 
-        public IActionResult Error()
-        {
-            return View(new {
-                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
-            });
-        }
     }
 }
